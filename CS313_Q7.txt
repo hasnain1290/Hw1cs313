@@ -27,20 +27,14 @@ int main()
 {
 	LinkedList<int> list1; //instantiating 2 versions of a linked list
 	int num;
-	int listSize = 10;
-	int VecSize = 10;
+	int listSize = 10000000;
+	int VecSize = 10000000;
 	list1.front(0);
 	BuildList(listSize, list1);
 
-	for (int i = 0; i < listSize; i++) //iterate the listSize based on the input
-	{
-		num = rand() % listSize;
-		list1.back(num);//input those numbers into the list from last to first
-		
-	}
 	auto listmilliseconds = TimeFunc([&]() {BuildList(listSize, list1); });
 	cout << "listmilliseconds " << listmilliseconds << endl;
-	
+
 	list1.deleteNode(3);
 	list1.deleteNode(5);
 	list1.deleteNode(7);
@@ -59,17 +53,17 @@ int main()
 		cout << *iterator << endl;
 	}
 
-// Vector
+	// Vector
 	vector<int> v3;
 	V v2(3); //single argument declaration just the size
-	V v1(1,5); //double argument declaration the size and the number that is initialized in each
-	
+	V v1(1, 5); //double argument declaration the size and the number that is initialized in each
+
 	BuildVector(VecSize, v3);
 
 	auto vectormilliseconds = TimeFunc([&]() {BuildVector(VecSize, v3); });
 	cout << "vectormilliseconds " << vectormilliseconds << endl;
 
-	
+
 	v1.pushback(1); // insert 1,2,3 into the first vector
 	v1.pushback(2);
 	v1.pushback(3);
@@ -84,10 +78,10 @@ int main()
 	cout << "Back before pop " << v2.back() << endl;
 	v2.popback(); //pop off the last item
 	cout << "Back after pop " << v2.back() << endl;
-	v2.clear(); 
+	v2.clear();
 	cout << "Magic Ta-da, no vectors left v2 : " << v2.size() << endl;
 
-	
+
 	cout << "V1 size: " << v1.size() << endl;
 	cout << "V1 front: " << v1.front() << endl;
 	cout << "V1 back: " << v1.back() << endl;
@@ -97,6 +91,7 @@ int main()
 	v1.clear();
 	cout << "Magic Ta-da, no vectors left v2: " << v1.size() << endl;
 }
+
 ******************************************************************************************************
 #include <iostream>
 #include <string>
