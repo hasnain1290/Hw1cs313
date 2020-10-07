@@ -9,14 +9,14 @@
 #include "Vector.h"
 #include "Timing.h"
 using namespace std;
-void BuildList(int size, LinkedList<int> L) {
+void BuildList(int size, LinkedList<int>& L) {
 	srand(time(NULL));
 	for (int i = 0; i < size; i++) {
 		int num = rand() % size;
 		L.front(num);
 	}
 }
-void BuildVector(int size, vector<int> v) {
+void BuildVector(int size, vector<int>& v) {
 	srand(time(0));
 	for (int i = 0; i < size; i++) {
 		v.push_back(rand() % size);
